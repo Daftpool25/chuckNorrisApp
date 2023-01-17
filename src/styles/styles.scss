@@ -1,0 +1,323 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./mixins.scss";
+
+html, body, #root{
+    margin: 0px;
+    padding:0px;
+    height: auto;
+    background-color: $colorLigth;
+}
+
+
+//! GENERAL TEXT
+p{
+    color: gray;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 300;
+}
+
+h1{
+    color: $colorRed;
+    font-family: $bold;
+    font-weight: 400;
+}
+
+//! CONTAINERS
+
+.container{
+    @include container (0em,column,auto,auto);
+    margin:1em;
+    h1{
+        font-size: 4em;
+        color: $colorOrange;
+        -webkit-text-stroke: 5px $colorRed
+    }
+    p{
+        text-align: center;
+        font-size:2em;
+    }
+    .dashboard{
+         @media screen and (max-width:600px){
+            @include container (0em,row,auto,auto);
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        @media screen and (min-width:600px){
+            @include container (0em,row,auto,auto);
+            flex-wrap: wrap;
+            height: auto;
+            width: 100%;
+            margin:2em;
+
+        }
+        @media screen and (min-width:768px){
+            @include container(0em,row, space-around, center);
+            flex-wrap: wrap;
+            width: 100%;
+            margin:2em;
+        }
+
+
+        .imgContainer{
+
+            @media screen and (max-width:600px){
+                width: 100%;
+                @include container(0em, column,auto, auto);
+
+            }
+            @media screen and(min-width:600px){
+                width: 100%;
+                text-align: center;
+            }
+            @media screen and(min-width:768px){
+                width: 30%;
+                height: auto;
+                text-align: center;
+            }
+
+
+            .dialogBox{
+            background-image: url("../images/dialog.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            &:hover{
+                background-color: white;
+                background-size: cover;
+                transition: 2s;
+                padding-bottom: 3em;
+            }
+            @media screen and (max-width:600px){
+                margin-top: 2em;
+                height: 50vh;
+                box-sizing: border-box;
+            }
+            @media screen and (min-width:600px){
+                height: 40vh;
+            }
+            @media screen and (min-width:768px){
+                height: 50vh;
+                box-sizing: border-box;
+            }
+            
+
+            div{
+                @media screen and (max-width:600px){
+                    padding-top: 3em;
+                    padding-left: 24%;
+                    padding-right: 19%;
+                    margin-bottom: 2em;
+                }
+                @media screen and (min-width:600px){
+                    padding-top: 2em;
+                    padding-left: 30%;
+                    padding-right: 28%;
+                    margin-bottom: 2em;
+                    p{
+                        font-size: 3em;
+                    }
+                }
+                @media screen and (min-width:768px){
+                    width: auto;
+                    height: auto;
+                    padding-left: 1.5em;
+                    padding-right: 1.5em;
+                    padding-top: 4.5em;
+                    margin-bottom: 5em;
+                }
+                @media screen and (min-width:996px){
+                    width: auto;
+                    height: auto;
+                    padding-left: 4.5em;
+                    padding-right: 4.5em;
+                    padding-top: 3em;
+                    margin-bottom: 5em;
+                }
+                p{
+                font-size: 1em;
+                box-sizing: border-box;
+
+                }
+            }
+            }
+        }
+        .dataContainer{
+
+        @media screen and (max-width:600px){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 0em 1em;
+
+            h1{font-size: 3.5em}
+
+        }
+        @media screen and(min-width:600px){
+            width: 100%;
+        }
+        @media screen and(min-width:768px){
+            width: 60%;
+            box-sizing: border-box;
+        }
+        }
+    }
+
+
+}
+
+
+//!MENUS
+
+.menu{
+    @include container(0.8em, row,center,center);
+    background-color: $colorRed;
+    flex-wrap: wrap;
+    gap:2em;
+    @media screen and (max-width:600px){
+        display: none;
+    }
+    span{
+        height: 100%;
+        color:white;
+        font-family: $bold;
+        font-size: 2em;
+    }
+    .iconsContainer{
+        @include container (0px,row,center, center) ;
+        flex-wrap: wrap;
+        gap: 2em;
+        img{
+            filter: invert(100%);
+            width: 36px;
+            @include over;
+        }
+    }
+}
+
+.menuMobile{
+    display:none;
+    @media screen and (max-width:600px){
+        background-color: $colorRed;
+        width: auto;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0.5em;
+        .menuHeader{
+            width: 100%;
+        }
+        .menuBody{
+            width: 100%;
+            .iconsContainer{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+            }
+            span{
+                height: 100%;
+                color:white;
+                font-family: $bold;
+                font-size: 2em;
+            }
+        }
+
+    }
+    img{
+        filter: invert(100%);
+        width: 36px;
+        @include over;
+    }
+}
+
+//! BUTTONS AREA
+
+.principalBtnTittleContainer{
+    @include container(0.5em, column,center, center,);
+    text-align: center;
+    @media screen and (max-width:600px){
+
+    }
+
+    .nextButton{
+        background-color: $colorYellow;
+        border: 6px solid $colorRed;
+        border-radius: 1em;
+        padding: 0.7em 1em;
+        color: white;
+        font-size: 2em;
+        font-family: $regular;
+        @include over;
+    }
+}
+
+
+
+.likesContainer{
+    @include container(0.5em, row,space-around,auto);
+    flex-wrap: wrap;
+    margin-top: 3em;
+
+    .likeButton{
+
+        @include btn(0.5em, row,center, center,rgb(23, 114, 23));
+        border-radius: 1em;
+
+        .spanText{
+            font-family: $regular;
+            font-size: 2em;
+            color:$colorLigth;
+        }
+        img{
+            filter: invert(100%)
+        }
+        @include overLikes;
+    }
+    .disLikeButton{
+
+        @include btn(0.5em, row,center, center,rgb(199, 34, 34));
+        border-radius: 1em;
+
+        .spanText{
+            font-family: $regular;
+            font-size: 2em;
+            color:$colorLigth;
+        }
+        img{
+            filter: invert(100%)
+        }
+        @include overLikes;
+    }
+
+    @media screen and (max-width:600px){
+        @include container(0.5em, column,center,center);
+        gap: 0.5em;
+        .likeButton , .disLikeButton{border-radius: 1em;}
+    }
+
+
+}
+
+//! CHUCKNORRIS IMAGE
+
+
+.imgResponsive{
+
+    @media screen and (min-width:600px){
+        width: 30em;
+    }
+    @media screen and (min-width:768px){
+        width: 20em;
+
+    }
+    @media screen and (min-width:992px){
+        width: 30em;
+        box-sizing: content-box;
+
+    }
+
+
+}

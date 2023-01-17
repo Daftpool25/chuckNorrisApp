@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import "./colors.scss";
+
+$regular: 'Comfortaa', cursive;
+
+$bold: 'Press Start 2P', cursive;
+
+.regularText{
+    font-size: 2em;
+    font-family: 'Comfortaa', cursive;
+    color:white;
+    text-decoration: none;
+
+}
+
+.tittleText{
+    font-size: 2em;
+    font-family: $bold;
+    color:white;
+    text-decoration: none;
+}

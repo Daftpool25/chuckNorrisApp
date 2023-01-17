@@ -1,0 +1,40 @@
+@import url("./colors.scss");
+
+@mixin container ($pd,$dirc,$just, $alig) {
+    padding: $pd;
+    display: flex;
+    flex-direction: $dirc;
+    justify-content: $just;
+    align-items: $alig;
+
+}
+
+@mixin btn ($pd,$dirc,$just, $alig,$color){
+    padding: $pd;
+    display: flex;
+    flex-direction: $dirc;
+    justify-content: $just;
+    align-items: $alig;
+
+    gap: 1em;
+    width: 14em;
+    background-color: $color;
+
+}
+
+@mixin over{
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.3);
+        transition: 2s;
+    }
+}
+
+@mixin overLikes{
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        filter: saturate(2);
+        transition: 2s;
+    }
+}
